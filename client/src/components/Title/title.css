@@ -5,13 +5,14 @@
 
 
 .wrapper {
-    background-image: url("/assets/images/cage-1.jpg");
+    background-image: url("/assets/images/arena.jpg");
     text-align: center;  
     height: 100vh;  
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
+  
 body, html {
     height: 100%;
     
@@ -24,9 +25,11 @@ body, html {
 }
 
 #start-button, #create-button {
-    background-color: blue;
+    background-color: black;
     color: white;
-    width: 250px;
+    width: 150px;
+    padding-top: 13px;
+    padding-bottom: 13px;
 }
 
 #title {
