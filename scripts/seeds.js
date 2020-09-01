@@ -17,7 +17,8 @@ const wseeds = [
   },
   
 ];
-db.Wrestlers
+
+
 db.Wrestlers.remove({})
   .then(() => db.Wrestlers.collection.insertMany(wseeds))
   .then(data => {
