@@ -2,6 +2,9 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3003;
 const app = express();
+const mongoose = require ("mongoose")
+const db = require("../models");
+
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -21,4 +24,12 @@ app.get("*", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
+});
+
+mongoose.connect("mongodb://localhost/Wrestlers", {
+  useNewUrlParser: true,
+});
+const connection = mongoose.connection;
+connection.once("open", () => {
+  console.log("==> Mongo DB connection established successfully");
 });
