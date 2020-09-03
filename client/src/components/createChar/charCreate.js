@@ -1,6 +1,8 @@
 import React from "react";
 // import { browserRouter as Router, Route, Switch } from "react-router-dom";
 import "./charCreate.css";
+import history from "../History"
+
 // import Routes from './Routes';
 // need main game page linked
 
@@ -19,6 +21,13 @@ function CharCreate() {
 			Atk : 10,
 			Def : 10
 		}; */}
+
+            <form>
+                <button variant="btn btn-success" onClick={() => history.push('/matchSetup')}> Save </button>
+            </form>
+            <form>
+                <button variant="btn btn-success" onClick={() => history.push('/charCreate')}> Save and create another </button>
+            </form>
 
             {/* this.handleChangeName = this.handleChangeName.bind(this);
 		this.changeHP = this.changeHP.bind(this);
