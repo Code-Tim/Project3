@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Title from './components/Title/Title';
 import MatchPlay from './components/MatchPlay/matchPlay';
-import MatchSelect from './components/MatchSelect/matchSelect';
+import MatchSelect from './components/MatchSetup/matchSetup';
 import CharCreate from './components/createChar/charCreate';
 import CharSelect from './components/CharSelect/charSelect';
 import Routes from "./Routes"

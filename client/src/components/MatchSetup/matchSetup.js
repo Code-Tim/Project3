@@ -1,5 +1,5 @@
 import React from "react";
-// import "./matchPlay.css";
+// import "./matchSetup.css";
 
 // import { browserRouter as Router, Route, Switch } from "react-router-dom";
 // import Routes from './Routes';
@@ -7,16 +7,19 @@ import React from "react";
 
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
-function matchPlay() {
+function matchSetup() {
     return (
 
-        <div className="Start Match">
-            <h1>Start Match</h1>
-            <h1>Player 2</h1>
+        <div className="matchSetup">
+            <h1>Match 1</h1>
+            <h1>Match 2</h1>
+            <h1>Match 3</h1>
+            <h1>Match 4</h1>
+            <h1>Match 5</h1>
 
 
         </div>
     )
 };
 
-export default matchPlay;
+export default matchSetup;
