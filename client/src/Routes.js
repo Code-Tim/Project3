@@ -14,7 +14,7 @@ export default class Routes extends Component {
     render() {
         return (
             <Router history={history}>
-                <h1>WHERE AM I?</h1>
+                {/* <h1>WHERE AM I?</h1> */}
                 <Switch>
                     <Route path="/" exact component={Title} />
                     <Route path="/title" exact component={Title} />

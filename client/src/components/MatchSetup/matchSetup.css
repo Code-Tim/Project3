@@ -4,7 +4,7 @@
   }
   
   
-  .charCreate {
+  .matchSetup {
       background-image: url("/assets/images/shutterstock_248261209.jpg");
       text-align: center;  
       height: 100vh;  
@@ -65,3 +65,4 @@
    }   */
   
    @import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@600&display=swap');
+  

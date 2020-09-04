@@ -1,5 +1,5 @@
 import React from "react";
-// import "./matchSetup.css";
+import "./matchSetup.css";
 import history from "../History"
 
 // import { browserRouter as Router, Route, Switch } from "react-router-dom";
@@ -12,30 +12,32 @@ function matchSetup() {
     return (
 
         <div className="matchSetup">
-            <h1>Match 1</h1>
+
+        <div id="title">FIGHTING GAME</div>
+            
             <form>
-                <button variant="btn btn-success" onClick={() => history.push('/playerSelect')}>match 1 </button> {/*need to show the 2 characters selected for the match*/}
+                <button id = "match" variant="btn btn-success" onClick={() => history.push('/playerSelect')}>MATCH 1 </button> {/*need to show the 2 characters selected for the match*/}
             </form>
-            <h1>Match 2</h1>
+            
             <form>
-                <button variant="btn btn-success" onClick={() => history.push('/playerSelect')}>match 2 </button> {/*need to show the 2 characters selected for the match*/}
+                <button id = "match" variant="btn btn-success" onClick={() => history.push('/playerSelect')}>MATCH 2 </button> {/*need to show the 2 characters selected for the match*/}
             </form>
-            <h1>Match 3</h1>
+            
             <form>
-                <button variant="btn btn-success" onClick={() => history.push('/playerSelect')}>match 3 </button> {/*need to show the 2 characters selected for the match*/}
+                <button id = "match" variant="btn btn-success" onClick={() => history.push('/playerSelect')}>MATCH 3 </button> {/*need to show the 2 characters selected for the match*/}
             </form>
-            <h1>Match 4</h1>
+            
             <form>
-                <button variant="btn btn-success" onClick={() => history.push('/playerSelect')}>match 4 </button> {/*need to show the 2 characters selected for the match*/}
+                <button id = "match" variant="btn btn-success" onClick={() => history.push('/playerSelect')}>MATCH 4 </button> {/*need to show the 2 characters selected for the match*/}
             </form>
-            <h1>Match 5</h1>
+            
             <form>
-                <button variant="btn btn-success" onClick={() => history.push('/playerSelect')}>match 5 </button> {/*need to show the 2 characters selected for the match*/}
+                <button id = "match" variant="btn btn-success" onClick={() => history.push('/playerSelect')}>MATCH 5 </button> {/*need to show the 2 characters selected for the match*/}
             </form>
 
-            <h1>Start Match</h1>
+            
             <form>
-                <button variant="btn btn-success" onClick={() => history.push('/matchPlay')}>Start Match </button>
+                <button id = "match" variant="btn btn-success" onClick={() => history.push('/matchPlay')}>START MATCH </button>
             </form>
             {/* Need to show the matches that are created */}
 
