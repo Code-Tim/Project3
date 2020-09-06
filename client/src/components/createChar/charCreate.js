@@ -11,7 +11,8 @@ import history from "../History"
 function CharCreate() {
     return (
 
-        <div className="CreateChar">
+        <div className="charCreate">
+            <div id="title">FIGHTING GAME</div>
             <h1>Character Creation</h1>
             {/* 
     this.state = {

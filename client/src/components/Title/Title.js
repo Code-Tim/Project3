@@ -15,14 +15,14 @@ function Title() {
       {/* <div className="start">
         <Link to="/StartGame" className="btn btn-primary">Sign up</Link></div> */}
       <form>
-        <button variant="btn btn-success" onClick={() => history.push('/matchSetup')}>Start Game</button>
+        <button id="start-button" variant="btn btn-success" onClick={() => history.push('/matchSetup')}>Start Game</button>
       </form>
       {/* <Link to="/StartGame"><button className="btn btn-primary" id="start-button">START</button></Link></div> */}
       {/* <div className="create">
         <Link to="/CreateChar"><button className="btn btn-primary" id="start-button">START</button></Link>
         </div>  */}
       <form>
-        <button variant="btn btn-success" onClick={() => history.push('/charCreate')}>Create Character</button>
+        <button id="create-button" variant="btn btn-success" onClick={() => history.push('/charCreate')}>Create Character</button>
       </form>
 
 

@@ -4,7 +4,7 @@
   }
   
   
-  .charCreate {
+  .wrapper {
       background-image: url("/assets/images/shutterstock_248261209.jpg");
       text-align: center;  
       height: 100vh;  
@@ -54,7 +54,8 @@
   }
   
  
-  /* #start-button, #create-button:hover, #start-button, #create-button:focus, #start-button, #create-button:active, #start-button, #create-button.active, .open .dropdown-toggle#start-button, #create-button {
+  /* 
+  #start-button, #create-button:hover, #start-button, #create-button:focus, #start-button, #create-button:active, #start-button, #create-button.active, .open .dropdown-toggle#start-button, #create-button {
   
     background-color: hsl(360, 68%, 60%) !important;
     background-repeat: repeat-x;
@@ -62,6 +63,6 @@
     border-color: red red hsl(360, 68%, 51%);
     color: #333 !important;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.59);
-   }   */
+   }  */
   
    @import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@600&display=swap');
