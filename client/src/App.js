@@ -10,6 +10,7 @@ import CharSelect from './components/CharSelect/charSelect';
 import Routes from "./Routes"
 
 function App() {
+  
   return (<Routes></Routes>
     // <Router>
 

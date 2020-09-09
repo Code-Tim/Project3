@@ -48,10 +48,12 @@ form {
 #title {
   color: red;
   font-size: 7rem;
-  padding-top: 100px;
+  padding-top: 50px;
   font-family:"titleFont";
-  
-  
+  background: -webkit-linear-gradient(black, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px black;
 }
 
  /* #start-button, #create-button
