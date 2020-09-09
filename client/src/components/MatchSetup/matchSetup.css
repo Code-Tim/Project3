@@ -4,7 +4,7 @@
   }
   
   
-  .charCreate {
+  .matchSetup {
       background-image: url("/assets/images/shutterstock_248261209.jpg");
       text-align: center;  
       height: 100vh;  
@@ -43,7 +43,8 @@
       
   }
   
-
+ 
+  
  
   /* #start-button, #create-button:hover, #start-button, #create-button:focus, #start-button, #create-button:active, #start-button, #create-button.active, .open .dropdown-toggle#start-button, #create-button {
   
@@ -56,3 +57,4 @@
    }   */
   
    @import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@600&display=swap');
+  
