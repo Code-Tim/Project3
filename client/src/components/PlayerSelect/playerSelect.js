@@ -5,6 +5,7 @@ import Carousel from "../Carousel/Carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
+
 // import { browserRouter as Router, Route, Switch } from "react-router-dom";
 // import Routes from './Routes';
 // need main game page linked
@@ -16,6 +17,7 @@ function playerSelect() {
 
         <div className="wrapper">
             <div id="title">FIGHTING GAME</div>
+
 
             <button id="fight-button" variant="btn btn-success" onClick={() => history.push('/Battle')}>FIGHT!!!</button>
 
@@ -37,7 +39,6 @@ function playerSelect() {
            
 
          </section2>
-            
 
 
         </div>

@@ -13,6 +13,7 @@ export default class Routes extends Component {
     render() {
         return (
             <Router history={history}>
+
                 <Switch>
                     <Route path="/" exact component={Title} />
                     <Route path="/title" exact component={Title} />
@@ -20,7 +21,9 @@ export default class Routes extends Component {
                     <Route path="/matchSetup" exact component={MatchSetup} />
                     <Route path="/playerSelect" exact component={PlayerSelect} />
                     <Route path="/charSelect" exact component={CharSelect} />
+
                     <Route path="/battle" exact component={Battle} />
+
                     <Route path="/start" exact component={StartGame} />
                 </Switch>
             </Router>
