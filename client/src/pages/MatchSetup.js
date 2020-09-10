@@ -1,6 +1,6 @@
 import React from "react";
 import "./matchSetup.css";
-import history from "../../utils/History";
+import history from "../utils/History";
 
 // import { browserRouter as Router, Route, Switch } from "react-router-dom";
 // import Routes from './Routes';
