@@ -1,73 +1,85 @@
-import React, { useContext } from "react";
-//import PropTypes from "prop-types";
-import "./pages.css";
-import { useEffect } from "react";
-import GameContext from "../utils/context/GameContext";
-import API from "../utils/API";
-import { useState } from "react";
-import PlayerSetup from "./PlayerSetup";
-import { Link } from "react-router-dom";
+import React from "react";
+import "./matchSetup.css";
+import history from "../utils/History";
 
-//MatchSetup.propTypes = {};
+// import { browserRouter as Router, Route, Switch } from "react-router-dom";
+// import Routes from './Routes';
+// need main game page linked
 
-function MatchSetup(props) {
-  const gameContext = useContext(GameContext);
-
-  const { savedCharacters, setSavedCharacters } = gameContext;
-
-  const [showplayers, setShowplayers] = useState(false);
-
-  const [showModal1, setShowModal1] = useState(false);
-  const [showModal2, setShowModal2] = useState(false);
-
-  const toggleModal = () => {
-    setShowModal1(!showModal1);
-  };
-
+// The ...props means, spread all of the passed props onto this element
+// That way we don't have to define them all individually
+function matchSetup() {
   return (
-    <div className="Container-fluid matchSetup">
-      <div className="row">
-        <div className="col-auto">
-          <div
-            className="btn btn-dark"
-            onClick={() => {
-              setShowplayers(!showplayers);
-            }}
-          >
-            Match1
-          </div>
-          <div className="btn btn-dark">Match2</div>
-          <div className="btn btn-dark">Match3</div>
-          <div className="btn btn-dark">Match4</div>
-          <div className="btn btn-dark">Match5</div>
-        </div>
-        {showplayers && (
-          <div className="col-auto">
-            <Link
-              to={{
-                pathname: "/playerSelect",
-                state: {
-                  fromMatch: "1",
-                },
-              }}
-              className="btn btn-primary"
-            >
-              Player1
-            </Link>
+    <div className="matchSetup">
+      <div id="title">FIGHTING GAME</div>
 
-            <button
-              type="button"
-              onClick={() => {
-                setShowModal2(true);
-              }}
-            >
-              Player2
-            </button>
-          </div>
-        )}
-      </div>
+      <form>
+        <button
+          id="match"
+          variant="btn btn-success"
+          onClick={() => history.push("/playerSelect")}
+        >
+          MATCH 1{" "}
+        </button>{" "}
+        {/*need to show the 2 characters selected for the match*/}
+      </form>
+
+      <form>
+        <button
+          id="match"
+          variant="btn btn-success"
+          onClick={() => history.push("/playerSelect")}
+        >
+          MATCH 2{" "}
+        </button>{" "}
+        {/*need to show the 2 characters selected for the match*/}
+      </form>
+
+      <form>
+        <button
+          id="match"
+          variant="btn btn-success"
+          onClick={() => history.push("/playerSelect")}
+        >
+          MATCH 3{" "}
+        </button>{" "}
+        {/*need to show the 2 characters selected for the match*/}
+      </form>
+
+      <form>
+        <button
+          id="match"
+          variant="btn btn-success"
+          onClick={() => history.push("/playerSelect")}
+        >
+          MATCH 4{" "}
+        </button>{" "}
+        {/*need to show the 2 characters selected for the match*/}
+      </form>
+
+      <form>
+        <button
+          id="match"
+          variant="btn btn-success"
+          onClick={() => history.push("/playerSelect")}
+        >
+          MATCH 5{" "}
+        </button>{" "}
+        {/*need to show the 2 characters selected for the match*/}
+      </form>
+
+      <form>
+        <button
+          id="match"
+          variant="btn btn-success"
+          onClick={() => history.push("/matchPlay")}
+        >
+          START MATCH{" "}
+        </button>
+      </form>
+      {/* Need to show the matches that are created */}
     </div>
   );
 }
 
-export default MatchSetup;
+export default matchSetup;
