@@ -1,15 +1,6 @@
 import { useState } from "react";
 const useGame = () => {
   const [savedCharacters, setSavedCharacters] = useState([]);
-  const [match1, setMatch1] = useState({
-    matchName: "",
-    description: "",
-    player1: "",
-    player2: "",
-    won: false,
-    setupComplete: false,
-  });
-
   const [playerMatch1, setPlayerMatch1] = useState([]);
 
   const [matchName, setMatchName] = useState("");
@@ -19,6 +10,15 @@ const useGame = () => {
     newState[objKey] = objKeyValue;
     setMatch1(newState);
   };
+
+  const [match1, setMatch1] = useState({
+    matchName: "",
+    description: "",
+    player1: "",
+    player2: "",
+    won: false,
+    setupComplete: false,
+  });
 
   return {
     match1,

@@ -9,27 +9,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 export function PlayerSelect() {
   const gameContext = useContext(GameContext);
 
-  const {
-    savedCharacters,
-    setSavedCharacters,
-    playerMatch1,
-    setPlayerMatch1,
-  } = gameContext;
-
-  const selectCharacter = (playerNum, choosenOne) => {
-    console.log("inside select char");
-    console.log(choosenOne);
-
-    if (playerMatch1 && playerMatch1.length <= parseInt(playerNum)) {
-      let newarray = playerMatch1;
-      newarray[playerNum - 1] = choosenOne;
-      setPlayerMatch1(newarray);
-    } else {
-      let newarray = [];
-      newarray[0] = choosenOne;
-      setPlayerMatch1(newarray);
-    }
-  };
+  const { setSavedCharacters } = gameContext;
 
   useEffect(() => {
     // const { fromMatch, forPlayer } = props.location.state;
@@ -64,13 +44,13 @@ export function PlayerSelect() {
         <div className="col-6">
           <section className="p1-section">
             <h1>Player 1</h1>
-            <ControlledCarousel />
+            <ControlledCarousel playerNum="1" />
           </section>
         </div>
         <div className="col-6">
           <section2 className="p2-section">
             <h1>Player 2</h1>
-            <ControlledCarousel />
+            <ControlledCarousel playerNum="2" />
           </section2>
         </div>
       </div>
