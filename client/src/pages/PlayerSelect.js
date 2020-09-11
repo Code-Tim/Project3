@@ -1,25 +1,36 @@
-import React, { useEffect, useContext } from "react";
-import API from "../utils/API";
+import React, { useState, useEffect, useContext } from "react";
+//components
 import ControlledCarousel from "../components/ControlledCarousel";
+//context
 import GameContext from "../utils/context/GameContext";
+//utils
+import API from "../utils/API";
 import history from "../utils/History";
+//css imports
 import "./playerSelect.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-export function PlayerSelect() {
+function PlayerSelect() {
+  //state and context hooks
+  const [errMessage, setErrMessage] = useState(null);
   const gameContext = useContext(GameContext);
 
-  const { setSavedCharacters } = gameContext;
+  const {
+    setSavedCharacters,
+    matchNum,
+    playersForMatch1,
+    playersForMatch2,
+    playersForMatch3,
+    playersForMatch4,
+    playersForMatch5,
+  } = gameContext;
 
   useEffect(() => {
-    // const { fromMatch, forPlayer } = props.location.state;
-
     // console.log(`from Match ${fromMatch}: ${forPlayer}`);
     const getSavedCharacters = () => {
       API.getSavedFightCharacters()
         .then((res) => {
           setSavedCharacters(res.data);
-          console.log(res.data[1]);
         })
         .catch((err) => console.log(err));
     };
@@ -28,6 +39,33 @@ export function PlayerSelect() {
     // eslint-disable-next-line
   }, []);
 
+  //internal functions
+  const checkIfDoneAndLeave = () => {
+    debugger;
+    if (matchNum === "1") {
+      //check if both players are the same if so pop an error
+      if (
+        playersForMatch1 &&
+        playersForMatch1.length === 2 &&
+        (playersForMatch1[0] === playersForMatch1[1] ||
+          playersForMatch1[0] === 0 ||
+          playersForMatch1[1] === 0)
+      ) {
+        //pop up an error
+        setErrMessage(
+          " Warning !!! Both players need to be selected and you cannot wrestle yourself...!!!!"
+        );
+      } else {
+        setErrMessage(null);
+        history.push("/MatchSetup");
+      }
+    } //matchnum check
+    else {
+      history.push("/MatchSetup");
+    }
+  };
+
+  //raison d'etre
   return (
     <div className="wrapper">
       <div id="title">SELECT PLAYER</div>
@@ -35,10 +73,13 @@ export function PlayerSelect() {
         <button
           id="fight-button"
           variant="btn btn-success"
-          onClick={() => history.push("/MatchSetup")}
+          onClick={() => checkIfDoneAndLeave()}
         >
           DONE
-        </button>{" "}
+        </button>
+      </div>
+      <div className="row justify-content-center">
+        {errMessage && <h5 className="error">{errMessage}</h5>}
       </div>
       <div className="row">
         <div className="col-6">

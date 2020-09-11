@@ -11,7 +11,7 @@ function CharSelect() {
           variant="btn btn-success"
           onClick={() => history.push("/matchSetup")}
         >
-          Remove this when we git the real page{" "}
+          Remove this when we git the real page
         </button>
       </form>
     </div>

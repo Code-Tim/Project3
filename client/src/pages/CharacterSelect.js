@@ -12,22 +12,22 @@ export function CharacterSelect() {
   const {
     savedCharacters,
     setSavedCharacters,
-    playerMatch1,
-    setPlayerMatch1,
+    playersForMatch1,
+    setPlayersForMatch1,
   } = gameContext;
 
   const selectCharacter = (playerNum, choosenOne) => {
     console.log("inside select char");
     console.log(choosenOne);
 
-    if (playerMatch1 && playerMatch1.length <= parseInt(playerNum)) {
-      let newarray = playerMatch1;
+    if (playersForMatch1 && playersForMatch1.length <= parseInt(playerNum)) {
+      let newarray = playersForMatch1;
       newarray[playerNum - 1] = choosenOne;
-      setPlayerMatch1(newarray);
+      setPlayersForMatch1(newarray);
     } else {
       let newarray = [];
       newarray[0] = choosenOne;
-      setPlayerMatch1(newarray);
+      setPlayersForMatch1(newarray);
     }
   };
 
