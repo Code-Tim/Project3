@@ -1,6 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
 import PropTypes from "prop-types";
 import "./Battle.css";
+import ProgressBar from "react-bootstrap/ProgressBar";
 
 Battle.propTypes = {
   matchNum: PropTypes.number,
@@ -12,6 +17,10 @@ function Battle(props) {
   const [fightDisabled, setFightDisabled] = useState(false);
   const [player1Health, setPlayer1Health] = useState(100);
   const [player2Health, setPlayer2Health] = useState(100);
+
+  // useEffect(() => {
+
+  // }, [player1Health, player2Health]);
 
   const fight = (moveId) => {
     addRound();
@@ -29,18 +38,21 @@ function Battle(props) {
     let move = Math.floor(Math.random() * 5);
     if (move >= 3 && userMove === "attack") {
       setResult(
-        result + "Computers counter was successful! You took 10 damage"
+        result + "Computers counter was successful! You took 10 damage&#13"
       );
       setPlayer1Health(player1Health - 10);
     } else if (move >= 3 && userMove === "counter") {
-      setResult(result + "Your counter was successful! Comp took 10 damage");
+      setResult(
+        result + "Your counter was successful! Comp took 10 damage&#13"
+      );
       setPlayer2Health(player2Health - 10);
     } else if (move < 3 && userMove === "attack") {
-      setResult(result + "Computer counter failed! You dealt 15 damage!");
+      setResult(result + "Computer counter failed! You dealt 15 damage!&#13");
       setPlayer2Health(player2Health - 15);
     } else if (move < 3 && userMove === "counter") {
       setResult(
-        result + "Your counter was not successful! You were dealt 15 damage!"
+        result +
+          "Your counter was not successful! You were dealt 15 damage!&#13"
       );
       setPlayer1Health(player1Health - 15);
     }
@@ -49,7 +61,7 @@ function Battle(props) {
   //proccesses the moves
   const damageStep = (userMove, generatedMove) => {
     if (userMove === "attack" && generatedMove === "attack") {
-      setResult(result + "Both players took damage");
+      setResult(result + "Both players took damage&#13");
       if (player2Health >= 10 && player1Health >= 10) {
         setPlayer2Health(player2Health - 10);
         setPlayer1Health(player1Health - 10);
@@ -58,14 +70,16 @@ function Battle(props) {
         setPlayer1Health(0);
       }
     } else if (userMove === "counter" && generatedMove === "counter") {
-      setResult(result + "Defensive stances taken in vain");
+      setResult(result + "Defensive stances taken in vain&#13");
     } else if (userMove === "attack" && generatedMove === "counter") {
       setResult(
-        result + "Comp took a defensive stance and prepares to counter"
+        result + "Comp took a defensive stance and prepares to counter&#13"
       );
       counter(userMove, generatedMove);
     } else if (userMove === "counter" && generatedMove === "attack") {
-      setResult(result + "You took a defensive stance and prepare to counter");
+      setResult(
+        result + "You took a defensive stance and prepare to counter&#13"
+      );
       counter(userMove, generatedMove);
     }
   };
@@ -84,11 +98,11 @@ function Battle(props) {
 
     setResult(
       result +
-        "Your move is <span>" +
+        "Your move is " +
         moveId +
-        "</span> and the computers move is <span>" +
+        " and the computers move is " +
         savedCompMove +
-        "</span> on round " +
+        " on round&#13 " +
         totalRounds
     );
     damageStep(moveId, savedCompMove);
@@ -155,6 +169,35 @@ function Battle(props) {
           PILE DRIVER
         </button>
       </div>
+      <Container fluid>
+        <Row id="progressbarRow">
+          <Col>
+            <ProgressBar now={player1Health} label={`${player1Health}%`} />
+          </Col>
+        </Row>
+
+        <Row id="progressbarRow">
+          <Col>
+            <ProgressBar now={player2Health} label={`${player2Health}%`} />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Form>
+              <Form.Group controlId="battleArea">
+                <Form.Label>Battle results</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  disabled
+                  value={result}
+                  placeholder="Start the BAAATLE!!!!!"
+                  onChange={(r) => setResult(r)}
+                ></Form.Control>
+              </Form.Group>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }

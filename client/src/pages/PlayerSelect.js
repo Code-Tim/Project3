@@ -60,6 +60,78 @@ function PlayerSelect() {
         history.push("/MatchSetup");
       }
     } //matchnum check
+    else if (matchNum === "2") {
+      //check if both players are the same if so pop an error
+      if (
+        playersForMatch2 &&
+        playersForMatch2.length === 2 &&
+        (playersForMatch2[0] === playersForMatch2[1] ||
+          playersForMatch2[0] === 0 ||
+          playersForMatch2[1] === 0)
+      ) {
+        //pop up an error
+        setErrMessage(
+          " Warning !!! Both players need to be selected and you cannot wrestle yourself...!!!!"
+        );
+      } else {
+        setErrMessage(null);
+        history.push("/MatchSetup");
+      }
+    } //matchnum check
+    else if (matchNum === "3") {
+      //check if both players are the same if so pop an error
+      if (
+        playersForMatch3 &&
+        playersForMatch3.length === 2 &&
+        (playersForMatch3[0] === playersForMatch3[1] ||
+          playersForMatch3[0] === 0 ||
+          playersForMatch3[1] === 0)
+      ) {
+        //pop up an error
+        setErrMessage(
+          " Warning !!! Both players need to be selected and you cannot wrestle yourself...!!!!"
+        );
+      } else {
+        setErrMessage(null);
+        history.push("/MatchSetup");
+      }
+    } //matchnum check
+    else if (matchNum === "1") {
+      //check if both players are the same if so pop an error
+      if (
+        playersForMatch4 &&
+        playersForMatch4.length === 2 &&
+        (playersForMatch4[0] === playersForMatch4[1] ||
+          playersForMatch4[0] === 0 ||
+          playersForMatch4[1] === 0)
+      ) {
+        //pop up an error
+        setErrMessage(
+          " Warning !!! Both players need to be selected and you cannot wrestle yourself...!!!!"
+        );
+      } else {
+        setErrMessage(null);
+        history.push("/MatchSetup");
+      }
+    } //matchnum check
+    else if (matchNum === "5") {
+      //check if both players are the same if so pop an error
+      if (
+        playersForMatch5 &&
+        playersForMatch5.length === 2 &&
+        (playersForMatch5[0] === playersForMatch5[1] ||
+          playersForMatch5[0] === 0 ||
+          playersForMatch5[1] === 0)
+      ) {
+        //pop up an error
+        setErrMessage(
+          " Warning !!! Both players need to be selected and you cannot wrestle yourself...!!!!"
+        );
+      } else {
+        setErrMessage(null);
+        history.push("/MatchSetup");
+      }
+    } //matchnum check
     else {
       history.push("/MatchSetup");
     }

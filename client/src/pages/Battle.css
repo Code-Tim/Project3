@@ -16,9 +16,16 @@
   html {
     height: 100%;
   }
-  
-  form {
+
+  #progressbarRow{
+    padding: 1rem;
+  }
+  .progress{
+    height: 2rem;
+  }
+  textarea.form-control{
     margin: 20px;
+    background-color: rgb(172,188,211);
   }
   
   #match {
