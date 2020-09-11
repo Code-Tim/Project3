@@ -72,7 +72,7 @@ function matchSetup() {
         <button
           id="match"
           variant="btn btn-success"
-          onClick={() => history.push("/matchPlay")}
+          onClick={() => history.push("/battle")}
         >
           START MATCH{" "}
         </button>

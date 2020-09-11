@@ -48,10 +48,10 @@ export function PlayerSelect() {
           </section>
         </div>
         <div className="col-6">
-          <section2 className="p2-section">
+          <section className="p2-section">
             <h1>Player 2</h1>
             <ControlledCarousel playerNum="2" />
-          </section2>
+          </section>
         </div>
       </div>
     </div>

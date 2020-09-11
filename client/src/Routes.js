@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import { Router, Switch, Route } from "react-router-dom";
-import StartGame from "./components/MatchPlay/matchPlay";
-import CharCreate from "./components/createChar/charCreate";
+import CharCreate from "./pages/CharacterCreate";
 import Title from "./components/Title/Title";
 import MatchSetup from "./pages/MatchSetup";
-import CharSelect from "./components/CharSelect/charSelect";
 import PlayerSelect from "./pages/PlayerSelect";
-import Battle from "./components/Battle/Battle";
+import Battle from "./pages/Battle";
 import history from "./utils/History";
 
 export default class Routes extends Component {
@@ -16,14 +14,10 @@ export default class Routes extends Component {
         <Switch>
           <Route path="/" exact component={Title} />
           <Route path="/title" exact component={Title} />
-          <Route path="/charCreate" exact component={CharCreate} />
+          {/* <Route path="/charCreate" exact component={CharCreate} /> */}
           <Route path="/matchSetup" exact component={MatchSetup} />
           <Route path="/playerSelect" exact component={PlayerSelect} />
-          <Route path="/charSelect" exact component={CharSelect} />
-
           <Route path="/battle" exact component={Battle} />
-
-          <Route path="/start" exact component={StartGame} />
         </Switch>
       </Router>
     );
