@@ -19,8 +19,8 @@ function matchSetup() {
           variant="btn btn-success"
           onClick={() => history.push("/playerSelect")}
         >
-          MATCH 1{" "}
-        </button>{" "}
+          MATCH 1
+        </button>
         {/*need to show the 2 characters selected for the match*/}
       </form>
 
@@ -30,8 +30,8 @@ function matchSetup() {
           variant="btn btn-success"
           onClick={() => history.push("/playerSelect")}
         >
-          MATCH 2{" "}
-        </button>{" "}
+          MATCH 2
+        </button>
         {/*need to show the 2 characters selected for the match*/}
       </form>
 
@@ -41,8 +41,8 @@ function matchSetup() {
           variant="btn btn-success"
           onClick={() => history.push("/playerSelect")}
         >
-          MATCH 3{" "}
-        </button>{" "}
+          MATCH 3
+        </button>
         {/*need to show the 2 characters selected for the match*/}
       </form>
 
@@ -52,8 +52,8 @@ function matchSetup() {
           variant="btn btn-success"
           onClick={() => history.push("/playerSelect")}
         >
-          MATCH 4{" "}
-        </button>{" "}
+          MATCH 4
+        </button>
         {/*need to show the 2 characters selected for the match*/}
       </form>
 
@@ -63,8 +63,8 @@ function matchSetup() {
           variant="btn btn-success"
           onClick={() => history.push("/playerSelect")}
         >
-          MATCH 5{" "}
-        </button>{" "}
+          MATCH 5
+        </button>
         {/*need to show the 2 characters selected for the match*/}
       </form>
 
@@ -74,7 +74,7 @@ function matchSetup() {
           variant="btn btn-success"
           onClick={() => history.push("/matchPlay")}
         >
-          START MATCH{" "}
+          START MATCH
         </button>
       </form>
       {/* Need to show the matches that are created */}

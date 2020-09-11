@@ -13,7 +13,7 @@ function matchPlay() {
           variant="btn btn-success"
           onClick={() => history.push("/charSelect")}
         >
-          Start Match{" "}
+          Start Match
         </button>
       </form>
       {/* Need to show the matches that are created */}

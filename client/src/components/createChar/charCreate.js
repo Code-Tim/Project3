@@ -27,8 +27,7 @@ function CharCreate() {
           variant="btn btn-success"
           onClick={() => history.push("/matchSetup")}
         >
-          {" "}
-          Save{" "}
+          Save
         </button>
       </form>
       <form>
@@ -36,8 +35,7 @@ function CharCreate() {
           variant="btn btn-success"
           onClick={() => history.push("/charCreate")}
         >
-          {" "}
-          Save and create another{" "}
+          Save and create another
         </button>
       </form>
 
