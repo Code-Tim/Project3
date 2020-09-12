@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Carousel from "react-bootstrap/Carousel";
 import GameContext from "../../utils/context/GameContext";
 
+
 ControlledCarousel.propTypes = {
   playerNum: PropTypes.number,
 };
@@ -95,6 +96,7 @@ function ControlledCarousel(props) {
       {savedCharacters.length ? (
         savedCharacters.map((fightChar) => {
           return (
+            
             <Carousel.Item key={fightChar.id}>
               <img
                 className="d-block w-400 h-400"
@@ -112,13 +114,18 @@ function ControlledCarousel(props) {
                   Select Player
                 </button>
               </Carousel.Caption>
+
+                  
             </Carousel.Item>
+            
+            
           );
         })
       ) : (
         <h2 className="text-center">No Saved Characters</h2>
       )}
     </Carousel>
+
   );
 }
 
