@@ -113,12 +113,8 @@ function ControlledCarousel(props) {
                 >
                   Select Player
                 </button>
-              </Carousel.Caption>
-
-                  
+              </Carousel.Caption>                  
             </Carousel.Item>
-            
-            
           );
         })
       ) : (
