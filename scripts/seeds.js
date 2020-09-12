@@ -3,7 +3,10 @@ const db = require("../models");
 
 // This file empties the Posts collection and inserts the books below
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Wrestlers");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Wrestlers", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const wseeds = [
   {
