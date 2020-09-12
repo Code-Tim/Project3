@@ -13,14 +13,7 @@ function CharCreate() {
     <div className="charCreate">
       <div id="title">FIGHTING GAME</div>
       <h1>Character Creation</h1>
-      {/* 
-    this.state = {
-                playerName : '',
-			HP: 50,
-			Stamina : 60,
-			Atk : 10,
-			Def : 10
-		}; */}
+     
 
       <form>
         <button
