@@ -94,7 +94,7 @@ function ControlledCarousel(props) {
     <Carousel activeIndex={index} onSelect={handleSelect} interval="40000000">
       {savedCharacters.length ? (
         savedCharacters.map((fightChar) => {
-          return (            
+          return (
             <Carousel.Item key={fightChar.id}>
               <img
                 className="d-block w-400 h-400"
