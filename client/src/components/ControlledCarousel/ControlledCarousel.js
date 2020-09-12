@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import Carousel from "react-bootstrap/Carousel";
 import GameContext from "../../utils/context/GameContext";
 
-
 ControlledCarousel.propTypes = {
   playerNum: PropTypes.number,
 };
