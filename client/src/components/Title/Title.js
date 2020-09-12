@@ -7,7 +7,7 @@ import history from "../../utils/History";
 function Title() {
   return (
     <div className="wrapper">
-      <div id="title">FIGHTING GAME</div>
+      <div id="title">Finish Them Wrestling</div>
 
       <form>
         <button
