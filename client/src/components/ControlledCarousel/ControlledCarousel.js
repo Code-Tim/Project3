@@ -94,8 +94,7 @@ function ControlledCarousel(props) {
     <Carousel activeIndex={index} onSelect={handleSelect} interval="40000000">
       {savedCharacters.length ? (
         savedCharacters.map((fightChar) => {
-          return (
-            
+          return (            
             <Carousel.Item key={fightChar.id}>
               <img
                 className="d-block w-400 h-400"
@@ -112,7 +111,7 @@ function ControlledCarousel(props) {
                 >
                   Select Player
                 </button>
-              </Carousel.Caption>                  
+              </Carousel.Caption>
             </Carousel.Item>
           );
         })
@@ -120,7 +119,6 @@ function ControlledCarousel(props) {
         <h2 className="text-center">No Saved Characters</h2>
       )}
     </Carousel>
-
   );
 }
 
