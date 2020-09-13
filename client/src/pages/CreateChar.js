@@ -12,10 +12,12 @@ import history from "../utils/History";
 //css imports
 import "./CreateChar.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import UserInput from "../components/User/UserInput";
 
 
 
 function CreateChar() {
+  
 
 
   //state and context hooks
@@ -58,7 +60,8 @@ function CreateChar() {
         </div>
 
         <div className="col-6 counters">
-          <UserForm />
+          
+          <UserInput />
           <Counter />
          
 

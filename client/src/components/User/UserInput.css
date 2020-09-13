@@ -1,0 +1,14 @@
+.heading {
+    display: inline-block;
+    width: 500px;
+}
+
+pre {
+   background-color: red;
+   width: 600px;
+   text-align: left;
+}
+
+input, textarea {
+    width: 300px;
+}

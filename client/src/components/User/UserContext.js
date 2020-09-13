@@ -6,8 +6,8 @@ const UserContext = React.createContext({
     onChange: () => {}
   },
   image: "",
-  
-  status: {
+
+  nickname: {
     value: "",
     onChange: () => {}
   },
