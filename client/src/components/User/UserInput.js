@@ -53,14 +53,14 @@ function UserInput() {
         
           
          
-        <label>
+        {/* <label>
           <div className="heading">Optional dropdown</div>
           <select name="dropdown" onChange={handleChange} value={state.version}>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             
           </select>
-        </label>
+        </label> */}
       </form>
       <pre>{JSON.stringify(state )}</pre>
       

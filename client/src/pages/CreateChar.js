@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext, useReducer } from "react";
 //components
-import ControlledCarousel from "../components/ControlledCarousel";
-import UserForm from "../components/User/UserForm";
+import Carousel from "../components/Carousel/Carousel";
 import Counter from "../components/User/Counter";
 
 //context
@@ -17,6 +16,7 @@ import UserInput from "../components/User/UserInput";
 
 
 function CreateChar() {
+  
   
 
 
@@ -55,7 +55,7 @@ function CreateChar() {
         <div className="col-4">
           <section className="p1-section">
             <h1>Player 1</h1>
-            <ControlledCarousel playerNum="1" />
+            <Carousel playerNum="1" />
           </section>
         </div>
 

@@ -29,10 +29,13 @@ h2 {
   margin-right: 100px;
 }
 
-.carousel,
+.carousel {
+  height: 100px;
+}
+
 .slide,
-.carousel-inner {
-  height: 500px;
+.carousel-slider {
+  height: 400px;
 }
 
 .p1-section {
@@ -67,4 +70,10 @@ h2 {
    margin-top: 50px;
   }
 
+  .carousel-root {
+    height: 500px;
+  }
 
+  .thumbs-wrapper {
+    margin: 0px;
+  }
