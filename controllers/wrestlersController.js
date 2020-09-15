@@ -8,7 +8,9 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   findById: function (req, res) {
-    db.Wrestlers.findById(req.params.id)
+    db.Wrestlers.findOne({
+      _id: mongojs.ObjectId(req.params.id),
+    })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },

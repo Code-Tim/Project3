@@ -1,93 +1,64 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import Carousel from "react-bootstrap/Carousel";
 import GameContext from "../../utils/context/GameContext";
 
 ControlledCarousel.propTypes = {
-  playerNum: PropTypes.number,
+  playerNum: PropTypes.string,
 };
 
 function ControlledCarousel(props) {
   const [index, setIndex] = useState(0);
   const gameContext = useContext(GameContext);
-  const {
-    savedCharacters,
-    playersForMatch1,
-    setPlayersForMatch1,
-    playersForMatch2,
-    setPlayersForMatch2,
-    playersForMatch3,
-    setPlayersForMatch3,
-    playersForMatch4,
-    setPlayersForMatch4,
-    playersForMatch5,
-    setPlayersForMatch5,
-    matchNum,
-  } = gameContext;
+  const { savedCharacters, game, setGame, setMatch, matchNum } = gameContext;
+  //const { playerIndex, setPlayerIndex } = useState(0);
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
 
+  useEffect(() => {
+    let matchObjKey = "match" + matchNum;
+
+    let playerObjKey = "player" + props.playerNum;
+    let newState = new Object({ ...game });
+    let newMatchObj = new Object({ ...newState[matchObjKey] });
+
+    if (
+      newMatchObj[playerObjKey] &&
+      newMatchObj[playerObjKey].length > 0 &&
+      savedCharacters &&
+      savedCharacters.length > 0
+    ) {
+      let indexFound = savedCharacters.findIndex(
+        (p) => p.name === newMatchObj[playerObjKey]
+      );
+      setIndex(indexFound);
+    }
+  }, []);
+
   const selectCharacter = (choosenOne) => {
     console.log("inside select char");
     console.log(choosenOne);
     //this code needs to refactored
-    if (matchNum === "1") {
-      if (playersForMatch1 && playersForMatch1.length > 0) {
-        let newarray = new Array(...playersForMatch1);
-        newarray[props.playerNum - 1] = choosenOne;
-        setPlayersForMatch1(newarray);
-      } else {
-        let newarray = [0, 0];
-        newarray[props.playerNum - 1] = choosenOne;
-        setPlayersForMatch1(newarray);
-      }
+
+    let matchKey = "match" + matchNum;
+    let matchObj = game[matchKey];
+    console.log(matchKey);
+    console.log(JSON.stringify(matchObj));
+    console.log(props.playerNum);
+    let matchObjChanged = new Object({ ...matchObj });
+
+    if (props.playerNum === "1") {
+      matchObjChanged["player1"] = choosenOne;
+    } else if (props.playerNum === "2") {
+      matchObjChanged["player2"] = choosenOne;
+    } else {
+      console.log(
+        "Error : should not have anything other than 1 or 2 in props"
+      );
     }
-    if (matchNum === "2") {
-      if (playersForMatch2 && playersForMatch2.length > 0) {
-        let newarray = new Array(...playersForMatch2);
-        newarray[props.playerNum - 1] = choosenOne;
-        setPlayersForMatch2(newarray);
-      } else {
-        let newarray = [0, 0];
-        newarray[props.playerNum - 1] = choosenOne;
-        setPlayersForMatch2(newarray);
-      }
-    }
-    if (matchNum === "3") {
-      if (playersForMatch3 && playersForMatch3.length > 0) {
-        let newarray = new Array(...playersForMatch3);
-        newarray[props.playerNum - 1] = choosenOne;
-        setPlayersForMatch3(newarray);
-      } else {
-        let newarray = [0, 0];
-        newarray[props.playerNum - 1] = choosenOne;
-        setPlayersForMatch3(newarray);
-      }
-    }
-    if (matchNum === "4") {
-      if (playersForMatch4 && playersForMatch4.length > 0) {
-        let newarray = new Array(...playersForMatch4);
-        newarray[props.playerNum - 1] = choosenOne;
-        setPlayersForMatch4(newarray);
-      } else {
-        let newarray = [0, 0];
-        newarray[props.playerNum - 1] = choosenOne;
-        setPlayersForMatch4(newarray);
-      }
-    }
-    if (matchNum === "5") {
-      if (playersForMatch5 && playersForMatch5.length > 0) {
-        let newarray = new Array(...playersForMatch5);
-        newarray[props.playerNum - 1] = choosenOne;
-        setPlayersForMatch5(newarray);
-      } else {
-        let newarray = [0, 0];
-        newarray[props.playerNum - 1] = choosenOne;
-        setPlayersForMatch5(newarray);
-      }
-    }
+    setMatch(matchKey, matchObjChanged);
   };
 
   return (
@@ -95,9 +66,9 @@ function ControlledCarousel(props) {
       {savedCharacters.length ? (
         savedCharacters.map((fightChar) => {
           return (
-            <Carousel.Item key={fightChar.id}>
+            <Carousel.Item key={fightChar._id}>
               <img
-                className="d-block w-400 h-400"
+                className="carouselImage"
                 src={fightChar.imgUrl}
                 alt={fightChar.name}
               />
@@ -106,7 +77,7 @@ function ControlledCarousel(props) {
                 <p>{fightChar.description}</p>
                 <button
                   onClick={() => {
-                    selectCharacter(fightChar.id);
+                    selectCharacter(fightChar.name);
                   }}
                 >
                   Select Player
