@@ -1,6 +1,7 @@
 import React from "react";
 
 const UserContext = React.createContext({
+
   name: {
     value: "",
     onChange: () => {}
@@ -8,6 +9,14 @@ const UserContext = React.createContext({
   image: "",
 
   nickname: {
+    value: "",
+    onChange: () => {}
+  },
+  count: {
+    value: "",
+    onChange: () => {}
+  },
+  count2: {
     value: "",
     onChange: () => {}
   },

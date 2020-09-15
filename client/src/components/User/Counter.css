@@ -1,6 +1,12 @@
 .counter-section {
     display: inline-block;
-    margin-right: 100px;
+    margin-right: 70px;
+}
+
+.both-counters {
+    
+    margin-right: -70px;
+    
 }
 
 h2 {
