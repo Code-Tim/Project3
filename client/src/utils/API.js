@@ -12,4 +12,14 @@ export default {
   saveFightCharacters: function (fightCharacterData) {
     return axios.post("/api/fightCharacters", fightCharacterData);
   },
+  //find wrestler by id
+  getFightCharacter: function (id) {
+    const fightChar = null;
+    axios
+      .get("/api/fightCharacters/" + id)
+      .then((response) => {
+        fightChar = response.data;
+      })
+      .catch();
+  },
 };

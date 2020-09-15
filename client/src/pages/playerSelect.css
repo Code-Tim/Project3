@@ -60,19 +60,7 @@ form {
 
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@600&display=swap");
 
-.p11-section {
-  width: 30%;
-  margin: 33%;
-  margin-top: 0px;
-  margin-left: 80px;
-}
 
-.p12-section {
-  width: 30%;
-  margin: 33%;
-  float: right;
-  margin-right: 80px;
-}
 
 #fight-button {
   background-color: black;

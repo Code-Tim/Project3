@@ -1,24 +1,59 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 const useGame = () => {
+  let initialGameState = {
+    match1: {
+      player1: "",
+      player2: "",
+      matchResult: "",
+    },
+    match2: {
+      player1: "",
+      player2: "",
+      matchResult: "",
+    },
+    match3: {
+      player1: "",
+      player2: "",
+      matchResult: "",
+    },
+    match4: {
+      player1: "",
+      player2: "",
+      matchResult: "",
+    },
+    match5: {
+      player1: "",
+      player2: "",
+      matchResult: "",
+    },
+  };
+  //game is an array of obejcts
+  //see initial state set
+  // const initial_playersForMatch1 = JSON.parse(
+  //   window.localStorage.getItem("playersForMatch1")
+  // ) || ["Shawn Michaels", "Randy Orton"];
+  const initial_game =
+    JSON.parse(window.localStorage.getItem("game")) || initialGameState;
+
+  const [game, setGame] = useState(initial_game);
+
   const [savedCharacters, setSavedCharacters] = useState([]);
-  const [playersForMatch1, setPlayersForMatch1] = useState([]);
-  const [playersForMatch2, setPlayersForMatch2] = useState([]);
-  const [playersForMatch3, setPlayersForMatch3] = useState([]);
-  const [playersForMatch4, setPlayersForMatch4] = useState([]);
-  const [playersForMatch5, setPlayersForMatch5] = useState([]);
 
   const [matchNum, setMatchNum] = useState("");
 
-  const [game, setGame] = useState([]);
-  //game is an array of obejcts
-  //[{match: "1",
-  //results:"won/lost/tie"}]
-
-  const setMatch = (matchnum, objKey, objKeyValue) => {
+  const setMatch = (matchnum, matchValue) => {
     //let matchnumber = "match" + matchnum;
-    let newState = new Object(...match1);
-    newState[objKey] = objKeyValue;
-    setMatch1(newState);
+    let newState = new Object({ ...game });
+    newState[matchnum] = matchValue;
+    setGame(newState);
+  };
+  const setIndividualMatchParameters = (matchnum, objKey, objKeyValue) => {
+    let matchnumber = "match" + matchnum;
+    let newState = new Object(...game);
+    let newMatchState = newState[matchnumber];
+    newMatchState[objKey] = objKeyValue;
+    newState[matchNum] = newMatchState;
+    setGame(newState);
   };
 
   const [match1, setMatch1] = useState({
@@ -30,21 +65,22 @@ const useGame = () => {
     setupComplete: false,
   });
 
+  useEffect(() => {
+    window.localStorage.setItem("game", JSON.stringify(game));
+
+    // window.localStorage.setItem(
+    //   "playersForMatch1",
+    //   JSON.stringify(playersForMatch1)
+    // );
+  }, [game]);
+
   return {
-    match1,
-    setMatch1,
+    game,
+    setGame,
+    setMatch,
+    setIndividualMatchParameters,
     matchNum,
     setMatchNum,
-    playersForMatch1,
-    setPlayersForMatch1,
-    playersForMatch2,
-    setPlayersForMatch2,
-    playersForMatch3,
-    setPlayersForMatch3,
-    playersForMatch4,
-    setPlayersForMatch4,
-    playersForMatch5,
-    setPlayersForMatch5,
     savedCharacters,
     setSavedCharacters,
   };
