@@ -14,7 +14,10 @@ function Title() {
         <button
           id="start-button"
           variant="btn btn-success"
-          onClick={() => history.push("/matchSetup")}
+          onClick={() => {
+            window.localStorage.clear();
+            history.push("/matchSetup");
+          }}
         >
           Start Game
         </button>

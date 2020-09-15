@@ -29,9 +29,7 @@ const useGame = () => {
   };
   //game is an array of obejcts
   //see initial state set
-  // const initial_playersForMatch1 = JSON.parse(
-  //   window.localStorage.getItem("playersForMatch1")
-  // ) || ["Shawn Michaels", "Randy Orton"];
+
   const initial_game =
     JSON.parse(window.localStorage.getItem("game")) || initialGameState;
 
@@ -67,11 +65,6 @@ const useGame = () => {
 
   useEffect(() => {
     window.localStorage.setItem("game", JSON.stringify(game));
-
-    // window.localStorage.setItem(
-    //   "playersForMatch1",
-    //   JSON.stringify(playersForMatch1)
-    // );
   }, [game]);
 
   return {

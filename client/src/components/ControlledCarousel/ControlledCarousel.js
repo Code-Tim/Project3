@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import Carousel from "react-bootstrap/Carousel";
 import GameContext from "../../utils/context/GameContext";
+import "./controlledCarousel.css";
 
 ControlledCarousel.propTypes = {
   playerNum: PropTypes.string,
@@ -38,8 +39,8 @@ function ControlledCarousel(props) {
   }, []);
 
   const selectCharacter = (choosenOne) => {
-    console.log("inside select char");
-    console.log(choosenOne);
+    //   console.log("inside select char");
+    //   console.log(JSON.stringify(choosenOne));
     //this code needs to refactored
 
     let matchKey = "match" + matchNum;
@@ -49,10 +50,18 @@ function ControlledCarousel(props) {
     console.log(props.playerNum);
     let matchObjChanged = new Object({ ...matchObj });
 
+    //get the player object
+
     if (props.playerNum === "1") {
-      matchObjChanged["player1"] = choosenOne;
+      matchObjChanged["player1"] = choosenOne.name;
+      matchObjChanged["health1"] = choosenOne.health;
+      matchObjChanged["stamina1"] = choosenOne.stamina;
+      matchObjChanged["finsihingMove1"] = choosenOne.finishingMove;
     } else if (props.playerNum === "2") {
-      matchObjChanged["player2"] = choosenOne;
+      matchObjChanged["player2"] = choosenOne.name;
+      matchObjChanged["health2"] = choosenOne.health;
+      matchObjChanged["stamina2"] = choosenOne.stamina;
+      matchObjChanged["finsihingMove2"] = choosenOne.finishingMove;
     } else {
       console.log(
         "Error : should not have anything other than 1 or 2 in props"
@@ -77,7 +86,7 @@ function ControlledCarousel(props) {
                 <p>{fightChar.description}</p>
                 <button
                   onClick={() => {
-                    selectCharacter(fightChar.name);
+                    selectCharacter(fightChar);
                   }}
                 >
                   Select Player
