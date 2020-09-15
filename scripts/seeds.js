@@ -11,11 +11,11 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Wrestlers", {
 const wseeds = [
   {
     name: "Shawn Michaels",
-    "Finishing move": "Sweet Chin Music",
+    Finishing_move: "Sweet Chin Music",
     id: 1,
     imgUrl:
       "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2018/10/Shawn_Michaels_Pro--d4bc7c99be4fcec510501f5e7d25bde7.png",
-    description: "Hartbreak Kid",
+    description: "Heartbreak Kid",
     Stamina: 100,
     Health: 100,
     Speed: 80,
@@ -23,7 +23,7 @@ const wseeds = [
   },
   {
     name: "Randy Orton",
-    "Finishing move": "RKO",
+    Finishing_move: "RKO",
     id: 2,
     imgUrl:
       "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2019/05/Randy_Orton_Pro--a9e0f9cbc3c45a244752ae995a7570ab.png",
@@ -35,7 +35,7 @@ const wseeds = [
   },
   {
     name: "Triple H",
-    "Finishing move": "Pedigree",
+    Finishing_move: "Pedigree",
     id: 3,
     imgUrl:
       "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2019/02/DX_Pro--d50fbad56a554dc91838431c89db6398.png",
@@ -47,7 +47,7 @@ const wseeds = [
   },
   {
     name: "John Cena",
-    "Finishing move": "STF",
+    Finishing_move: "STF",
     id: 4,
     imgUrl:
       "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2020/01/John_Cena_Pro--c49ac192e6c71d6dde11351ad70975d4.png",
@@ -59,7 +59,7 @@ const wseeds = [
   },
   {
     name: "Jeff Hardy",
-    "Finishing move": "Swanton Bomb",
+    Finishing_move: "Swanton Bomb",
     id: 5,
     imgUrl:
       "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2020/08/Superstar_Jeff_Hardy_Title_Profile--6ff2d0a373976b8f5d0c3b24034091f2.png",
@@ -71,7 +71,7 @@ const wseeds = [
   },
   {
     name: "Hardcore Holly",
-    "Finishing move": "Alabama Slam",
+    Finishing_move: "Alabama Slam",
     id: 6,
     imgUrl:
       "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/rd-talent/Profile/Hardcore_Holly_pro.png",
@@ -83,7 +83,7 @@ const wseeds = [
   },
   {
     name: "Chris Jericho",
-    "Finishing move": "Walls of Jericho",
+    Finishing_move: "Walls of Jericho",
     id: 7,
     imgUrl:
       "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2017/05/Chris_Jericho_Pro--3ccfc973e6285e437ea6cd55100a7aae.png",
@@ -95,7 +95,7 @@ const wseeds = [
   },
   {
     name: "The Undertaker",
-    "Finishing move": "Tombstone Piledriver",
+    Finishing_move: "Tombstone Piledriver",
     id: 8,
     imgUrl:
       "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2020/01/Undertaker_Pro--e73c07b669f8d823088cf8de4cebfde8.png",
@@ -107,7 +107,7 @@ const wseeds = [
   },
   {
     name: "Edge",
-    "Finishing move": "Spear",
+    Finishing_move: "Spear",
     id: 9,
     imgUrl:
       "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2020/04/Edge_Pro--bf0ddae0f8bfed58e4b90c587b5037c4.png",
@@ -118,8 +118,8 @@ const wseeds = [
     Power: 85,
   },
   {
-    name: "Rey Misterio",
-    "Finishing move": "619",
+    name: "Rey Mysterio",
+    Finishing_move: "619",
     id: 10,
     imgUrl:
       "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2020/01/Rey_Mysterio_Pro--ce1392898148b89855067b09c44dedf0.png",
@@ -131,7 +131,7 @@ const wseeds = [
   },
   {
     name: "Batista",
-    "Finishing move": "Batista Bomb",
+    Finishing_move: "Batista Bomb",
     id: 11,
     imgUrl:
       "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/rd-talent/Profile/Batista_pro.png",
@@ -143,7 +143,7 @@ const wseeds = [
   },
   {
     name: "Matt Hardy",
-    "Finishing move": "Twist Of Fate",
+    Finishing_move: "Twist Of Fate",
     id: 12,
     imgUrl:
       "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2019/04/Matt_Hardy_Pro--f658eb813c43ec3a61bcfd29f14ef54f.png",
@@ -155,7 +155,7 @@ const wseeds = [
   },
   {
     name: "Gregory Helms",
-    "Finishing move": "Shining Wizard",
+    Finishing_move: "Shining Wizard",
     id: 13,
     imgUrl:
       "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/rd-talent/Profile/Hurricane_pro.png",
@@ -167,7 +167,7 @@ const wseeds = [
   },
   {
     name: "Torrie Wilson",
-    "Finishing move": "Spinning DDT",
+    Finishing_move: "Spinning DDT",
     id: 14,
     imgUrl:
       "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2019/03/TorrieWilson_Pro--22036a191ceec320c4e240846699c40a.png",
@@ -179,7 +179,7 @@ const wseeds = [
   },
   {
     name: "Kane",
-    "Finishing move": "ChokeSlam",
+    Finishing_move: "ChokeSlam",
     id: 15,
     imgUrl:
       "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2020/01/Kane_Pro--97fd51c6219810ef02070c332958e10a.png",
@@ -191,7 +191,7 @@ const wseeds = [
   },
   {
     name: "Stone Cold Steve Austin",
-    "Finishing move": "Stone Cold Stunner",
+    Finishing_move: "Stone Cold Stunner",
     id: 16,
     imgUrl:
       "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/rd-talent/Profile/Stone_Cold_Steve_Austin_pro.png",
@@ -203,7 +203,7 @@ const wseeds = [
   },
   {
     name: "Trish Stratus",
-    "Finishing move": "Stratusfaction",
+    Finishing_move: "Stratusfaction",
     id: 17,
     imgUrl:
       "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/rd-talent/Profile/Trish_Stratus_pro.png",
@@ -215,7 +215,7 @@ const wseeds = [
   },
   {
     name: "Lita",
-    "Finishing move": "Moonsault",
+    Finishing_move: "Moonsault",
     id: 18,
     imgUrl:
       "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/rd-talent/Profile/Lita_pro.png",
@@ -227,7 +227,7 @@ const wseeds = [
   },
   {
     name: "Sasha Banks",
-    "Finishing move": "Bank Statement",
+    Finishing_move: "Bank Statement",
     id: 19,
     imgUrl:
       "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2020/09/Sasha_Banks_Pro--ee558023ef6127e11fae6abcc424fa20.png",
