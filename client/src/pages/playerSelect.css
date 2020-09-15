@@ -42,7 +42,7 @@ form {
 #title {
   color: red;
   font-size: 4rem;
-  padding-top: 50px;
+  
   font-family: "titleFont";
   text-shadow: 2px 2px black;
 }

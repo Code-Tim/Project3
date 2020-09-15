@@ -7,8 +7,7 @@ function UserInput() {
   const [state, setState] = React.useState({
     CharName: "",
     NickName: "",
-    bio: "",
-    dropdown: "",
+   
     
  
   });
@@ -45,24 +44,13 @@ function UserInput() {
             onChange={handleChange}
           />
         </label>
-        <label>
-          <div className="heading">Bio</div>
-          <textarea name="bio" value={state.bio} onChange={handleChange} />
-        </label>
+        <br></br>
+        <br></br>
       
-        
-          
-         
-        {/* <label>
-          <div className="heading">Optional dropdown</div>
-          <select name="dropdown" onChange={handleChange} value={state.version}>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            
-          </select>
-        </label> */}
+      
+
       </form>
-      <pre>{JSON.stringify(state )}</pre>
+      
       
     </div>
     

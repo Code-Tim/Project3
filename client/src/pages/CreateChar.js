@@ -54,7 +54,7 @@ function CreateChar() {
       <div className="row">
         <div className="col-4">
           <section className="p1-section">
-            <h1>Player 1</h1>
+            <h1>your image</h1>
             <Carousel playerNum="1" />
           </section>
         </div>

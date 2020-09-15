@@ -47,8 +47,8 @@ form {
 
 #title {
   color: red;
-  font-size: 7rem;
-  padding-top: 50px;
+  font-size: 8rem;
+  padding-top: 20px;
   font-family:"titleFont";
   background: -webkit-linear-gradient(black, red);
   -webkit-background-clip: text;

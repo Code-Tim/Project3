@@ -29,19 +29,19 @@ function Counter() {
     setCount2(prevCount2 => prevCount2 - 1);
   };
   return (
-    <div>
+    <div className= "both-counters">
       <div className= "counter-section">
       <h1>ATTACk</h1>
-        <button onClick={handleDecrement}>-</button>
-        <h2>{count}</h2>
         <button onClick={handleIncrement}>+</button>
+        <h2>{count}</h2>
+        <button onClick={handleDecrement}>-</button>
       </div>
       {/* <button onClick={() => setCount(0),setCount2(0)}>Reset</button> */}
       <div className= "counter-section">
-      <h1>COUNTER</h1>
-        <button onClick={handleDecrement2}>-</button>
-        <h2>{count2}</h2>
+      <h1>Defense</h1>
         <button onClick={handleIncrement2}>+</button>
+        <h2>{count2}</h2>
+        <button onClick={handleDecrement2}>-</button>
       </div>
       
     </div>
