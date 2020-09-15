@@ -35,8 +35,8 @@ const WrestlersSchema = new Schema({
   },
   // `finishingMove` is required and of type String
   finishingMove: {
-    type: Number,
-    required: true,
+    type: String,
+    required: false,
   },
 });
 

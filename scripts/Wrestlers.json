@@ -1,7 +1,7 @@
 [
   {
     "name": "Shawn Michaels",
-    "Finishing move": "Sweet Chin Music",
+    "finishingMove": "Sweet Chin Music",
     "id": 1,
     "imgUrl": "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2018/10/Shawn_Michaels_Pro--d4bc7c99be4fcec510501f5e7d25bde7.png",
     "description": "Hartbreak Kid",
@@ -12,7 +12,7 @@
   },
   {
     "name": "Randy Orton",
-    "Finishing move": "RKO",
+    "finishingMove": "RKO",
     "id": 2,
     "imgUrl": "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2019/05/Randy_Orton_Pro--a9e0f9cbc3c45a244752ae995a7570ab.png",
     "description": "The Viper",
@@ -23,7 +23,7 @@
   },
   {
     "Wrestler name": "Triple H",
-    "Finishing move": "Pedigree",
+    "finishingMove": "Pedigree",
     "id": 3,
     "imgUrl": "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2019/02/DX_Pro--d50fbad56a554dc91838431c89db6398.png",
     "description": "The Game",
@@ -34,7 +34,7 @@
   },
   {
     "Wrestler name": "John Cena",
-    "Finishing move": "STF",
+    "finishingMove": "STF",
     "id": 4,
     "imgUrl": "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2020/01/John_Cena_Pro--c49ac192e6c71d6dde11351ad70975d4.png",
     "description": "The Doctor of Thuganomics",
@@ -45,7 +45,7 @@
   },
   {
     "Wrestler name": "Jeff Hardy",
-    "Finishing move": "Swanton Bomb",
+    "finishingMove": "Swanton Bomb",
     "id": 5,
     "imgUrl": "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2020/08/Superstar_Jeff_Hardy_Title_Profile--6ff2d0a373976b8f5d0c3b24034091f2.png",
     "description": "The Charismatic Enigma",
@@ -56,7 +56,7 @@
   },
   {
     "Wrestler name": "Hardcore Holly",
-    "Finishing move": "Alabama Slam",
+    "finishingMove": "Alabama Slam",
     "id": 6,
     "imgUrl": "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/rd-talent/Profile/Hardcore_Holly_pro.png",
     "description": "The Alabama Slamma",
@@ -67,7 +67,7 @@
   },
   {
     "Wrestler name": "Chris Jericho",
-    "Finishing move": "Walls of Jericho",
+    "finishingMove": "Walls of Jericho",
     "id": 7,
     "imgUrl": "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2017/05/Chris_Jericho_Pro--3ccfc973e6285e437ea6cd55100a7aae.png",
     "description": "The Ayatollah of Rock 'n' Rolla",
@@ -78,7 +78,7 @@
   },
   {
     "Wrestler name": "The Undertaker",
-    "Finishing move": "Tombstone Piledriver",
+    "finishingMove": "Tombstone Piledriver",
     "id": 8,
     "imgUrl": "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2020/01/Undertaker_Pro--e73c07b669f8d823088cf8de4cebfde8.png",
     "description": "The Deadman",
@@ -89,7 +89,7 @@
   },
   {
     "Wrestler name": "Edge",
-    "Finishing move": "Spear",
+    "finishingMove": "Spear",
     "id": 9,
     "imgUrl": "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2020/04/Edge_Pro--bf0ddae0f8bfed58e4b90c587b5037c4.png",
     "description": "The Rated R Superstar",
@@ -100,7 +100,7 @@
   },
   {
     "Wrestler name": "Rey Misterio",
-    "Finishing move": "619",
+    "finishingMove": "619",
     "id": 10,
     "imgUrl": "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2020/01/Rey_Mysterio_Pro--ce1392898148b89855067b09c44dedf0.png",
     "description": "The Master of the 619",
@@ -111,7 +111,7 @@
   },
   {
     "Wrestler name": "Batista",
-    "Finishing move": "Batista Bomb",
+    "finishingMove": "Batista Bomb",
     "id": 11,
     "imgUrl": "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/rd-talent/Profile/Batista_pro.png",
     "description": "The Animal",
@@ -122,7 +122,7 @@
   },
   {
     "Wrestler name": "Matt Hardy",
-    "Finishing move": "Twist Of Fate",
+    "finishingMove": "Twist Of Fate",
     "id": 12,
     "imgUrl": "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2019/04/Matt_Hardy_Pro--f658eb813c43ec3a61bcfd29f14ef54f.png",
     "description": "",
@@ -133,7 +133,7 @@
   },
   {
     "Wrestler name": "Gregory Helms",
-    "Finishing move": "Shining Wizard",
+    "finishingMove": "Shining Wizard",
     "id": 13,
     "imgUrl": "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/rd-talent/Profile/Hurricane_pro.png",
     "description": "The Hurricane",
@@ -144,7 +144,7 @@
   },
   {
     "Wrestler name": "Torrie Wilson",
-    "Finishing move": "Spinning DDT",
+    "finishingMove": "Spinning DDT",
     "id": 14,
     "imgUrl": "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2019/03/TorrieWilson_Pro--22036a191ceec320c4e240846699c40a.png",
     "description": "Torrie",
@@ -155,7 +155,7 @@
   },
   {
     "Wrestler name": "Kane",
-    "Finishing move": "ChokeSlam",
+    "finishingMove": "ChokeSlam",
     "id": 15,
     "imgUrl": "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2020/01/Kane_Pro--97fd51c6219810ef02070c332958e10a.png",
     "description": "The Big Red Machine",
@@ -166,7 +166,7 @@
   },
   {
     "Wrestler name": "Stone Cold Steve Austin",
-    "Finishing move": "Stone Cold Stunner",
+    "finishingMove": "Stone Cold Stunner",
     "id": 16,
     "imgUrl": "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/rd-talent/Profile/Stone_Cold_Steve_Austin_pro.png",
     "description": "The Texas Rattle Snake",
@@ -177,7 +177,7 @@
   },
   {
     "Wrestler name": "Trish Stratus",
-    "Finishing move": "Stratusfaction",
+    "finishingMove": "Stratusfaction",
     "id": 17,
     "imgUrl": "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/rd-talent/Profile/Trish_Stratus_pro.png",
     "description": "Canada’s greatest export",
@@ -188,7 +188,7 @@
   },
   {
     "Wrestler name": "Lita",
-    "Finishing move": "Moonsault",
+    "finishingMove": "Moonsault",
     "id": 18,
     "imgUrl": "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/rd-talent/Profile/Lita_pro.png",
     "description": "Miss Congeniality",
@@ -199,7 +199,7 @@
   },
   {
     "Wrestler name": "Sasha Banks",
-    "Finishing move": "Bank Statement",
+    "finishingMove": "Bank Statement",
     "id": 19,
     "imgUrl": "https://www.wwe.com/f/styles/wwe_1_1_540__composite/public/all/2020/09/Sasha_Banks_Pro--ee558023ef6127e11fae6abcc424fa20.png",
     "description": "The Boss",
