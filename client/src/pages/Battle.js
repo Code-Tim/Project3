@@ -11,6 +11,7 @@ import Col from "react-bootstrap/Col";
 import ProgressBar from "react-bootstrap/ProgressBar";
 //use context
 import GameContext from "../utils/context/GameContext";
+import history from "../utils/History";
 //css
 import "./Battle.css";
 
@@ -36,7 +37,11 @@ function Battle(props) {
 
   const [fightDisabled, setFightDisabled] = useState(false);
   const [nextFightDisabled, setNextFightDisabled] = useState(true);
+  const [showResultsDisabled, setShowResultsDisabled] = useState(false);
   const [showMatchOutcome, setShowMatchOutcome] = React.useState(false);
+  useEffect(() => {
+    console.log(results);
+  }, [results]);
 
   useEffect(() => {
     if (player1Health <= 50 && player1Health > 20) {
@@ -65,15 +70,15 @@ function Battle(props) {
     let matchObjKey = "match" + matchNum;
     let newState = new Object({ ...game });
     let newMatchObj = new Object({ ...newState[matchObjKey] });
-    setCurrentMatchObj({ ...currentMatchObj, ...newMatchObj });
+    setCurrentMatchObj({ ...newMatchObj });
     console.log(JSON.stringify(currentMatchObj));
 
     // set health for the health bars
     if (newMatchObj && newMatchObj["health1"]) {
-      setPlayer1Health(newMatchObj["health1"].toString());
+      setPlayer1Health(newMatchObj["health1"]);
     }
     if (newMatchObj && newMatchObj["health2"]) {
-      setPlayer2Health(newMatchObj["health2"].toString());
+      setPlayer2Health(newMatchObj["health2"]);
     }
     return () => (isMountedRef.current = false);
   }, []);
@@ -112,9 +117,9 @@ function Battle(props) {
     let move = Math.floor(Math.random() * 5);
     if (move >= 3 && userMove === "attack") {
       resultMessage =
-        currentMatchObj["player2"] +
+        game["match" + matchNum]["player2"] +
         " counter was successful! " +
-        currentMatchObj["player1"] +
+        game["match" + matchNum]["player1"] +
         " took 10 damage";
       setResults([...results, resultMessage]);
       player1Health <= 10
@@ -122,9 +127,9 @@ function Battle(props) {
         : setPlayer1Health(player1Health - 10);
     } else if (move >= 3 && userMove === "counter") {
       resultMessage =
-        currentMatchObj["player1"] +
+        game["match" + matchNum]["player1"] +
         " counter was successful! " +
-        currentMatchObj["player2"] +
+        game["match" + matchNum]["player2"] +
         " took 10 damage";
       setResults([...results, resultMessage]);
       player2Health <= 10
@@ -132,9 +137,9 @@ function Battle(props) {
         : setPlayer2Health(player2Health - 10);
     } else if (move < 3 && userMove === "attack") {
       resultMessage =
-        currentMatchObj["player2"] +
+        game["match" + matchNum]["player2"] +
         " counter failed! " +
-        currentMatchObj["player1"] +
+        game["match" + matchNum]["player1"] +
         " is dealt 15 damage!";
       setResults([...results, resultMessage]);
       player2Health <= 15
@@ -142,9 +147,9 @@ function Battle(props) {
         : setPlayer2Health(player2Health - 15);
     } else if (move < 3 && userMove === "counter") {
       resultMessage =
-        currentMatchObj["player1"] +
+        game["match" + matchNum]["player1"] +
         " counter was not successful! " +
-        currentMatchObj["player1"] +
+        game["match" + matchNum]["player1"] +
         " is dealt 15 damage!";
       setResults([...results, resultMessage]);
       player1Health <= 15
@@ -171,13 +176,13 @@ function Battle(props) {
       setResults([...results, resultMessage]);
     } else if (userMove === "attack" && generatedMove === "counter") {
       resultMessage =
-        currentMatchObj["player2"] +
+        game["match" + matchNum]["player2"] +
         " took a defensive stance and prepares to counter";
       setResults([...results, resultMessage]);
       counter(userMove, generatedMove);
     } else if (userMove === "counter" && generatedMove === "attack") {
       resultMessage =
-        currentMatchObj["player1"] +
+        game["match" + matchNum]["player1"] +
         " took a defensive stance and prepare to counter";
       setResults([...results, resultMessage]);
       counter(userMove, generatedMove);
@@ -198,11 +203,11 @@ function Battle(props) {
     }
 
     resultMessage =
-      currentMatchObj["player1"] +
+      game["match" + matchNum]["player1"] +
       " move is " +
       moveId +
       " and " +
-      currentMatchObj["player2"] +
+      game["match" + matchNum]["player2"] +
       " move is " +
       savedCompMove +
       " on round " +
@@ -221,21 +226,32 @@ function Battle(props) {
       resultMessage = "";
       setResults([...results, resultMessage]);
       console.log(results);
-      setFightDisabled(true);
-      setNextFightDisabled(false);
       //set match results
       debugger;
-      let newCurrentMatchObject = new Object({ ...currentMatchObj });
+      let newCurrentMatchObject = new Object({ ...game["match" + matchNum] });
       if (player1Health === 0 && player2Health === 0) {
         newCurrentMatchObject["matchResult"] = "tie";
       } else if (player1Health === 0) {
-        newCurrentMatchObject["matchResult"] = "won";
-      } else if (player2Health === 0) {
         newCurrentMatchObject["matchResult"] = "lost";
+      } else if (player2Health === 0) {
+        newCurrentMatchObject["matchResult"] = "won";
       }
       setShowMatchOutcome(true);
       let matchKey = "match" + matchNum;
       setMatch(matchKey, newCurrentMatchObject);
+
+      if (matchNum === 5) {
+        //do last match steps
+        setShowResultsDisabled(false);
+        setNextFightDisabled(true);
+        setFightDisabled(true);
+
+        history.push("/matchResults");
+        //display results
+      } else {
+        setFightDisabled(true);
+        setNextFightDisabled(false);
+      }
     }
   };
 
@@ -246,7 +262,7 @@ function Battle(props) {
     let nextMatchNum = parseInt(matchNum) + 1;
     if (nextMatchNum <= 5) {
       //step 1 : increment match num
-      setMatchNum(nextMatchNum.toString());
+      setMatchNum(() => nextMatchNum.toString());
       let matchObjKey = "match" + nextMatchNum;
 
       //Step 2 : get the new player stats
@@ -257,52 +273,59 @@ function Battle(props) {
       //Step 3:check if previous games fought
       let reduceHealth = 0;
       let foughtPreviously = checkifFoughtPreviously(
-        currentMatchObj["player1"]
+        game["match" + nextMatchNum]["player1"],
+        nextMatchNum
       );
       //Step 4: set health for the health bars
-
+      debugger;
       //if the player has played before then decrement health by
       // 25% of the stamina
       if (foughtPreviously) {
-        reduceHealth = Math.floor(currentMatchObj["stamina1"] * 0.25);
-        reduceHealth = currentMatchObj["health1"] - reduceHealth;
+        reduceHealth = Math.floor(
+          game["match" + nextMatchNum]["stamina1"] * 0.25
+        );
+        reduceHealth = game["match" + nextMatchNum]["health1"] - reduceHealth;
         setPlayer1Health(reduceHealth);
       } else {
-        setPlayer1Health(currentMatchObj["health1"].toString());
+        setPlayer1Health(game["match" + nextMatchNum]["health1"]);
         setPlayer1Variant("success");
       }
 
       //PLAYER2
       //Step 3:check if previous games fought
       reduceHealth = 0;
-      foughtPreviously = checkifFoughtPreviously(currentMatchObj["player2"]);
+      foughtPreviously = checkifFoughtPreviously(
+        game["match" + nextMatchNum]["player2"],
+        nextMatchNum
+      );
       //Step 4: set health for the health bars
 
       //if the player has played before then decrement health by
       // 25% of the stamina
       if (foughtPreviously) {
-        reduceHealth = Math.floor(currentMatchObj["stamina2"] * 0.25);
-        reduceHealth = currentMatchObj["health2"] - reduceHealth;
+        reduceHealth = Math.floor(
+          game["match" + nextMatchNum]["stamina2"] * 0.25
+        );
+        reduceHealth = game["match" + nextMatchNum]["health2"] - reduceHealth;
         setPlayer2Health(reduceHealth);
       } else {
-        setPlayer2Health(currentMatchObj["health2"].toString());
+        setPlayer2Health(game["match" + nextMatchNum]["health2"]);
       }
       setFightDisabled(false);
+      setNextFightDisabled(true);
       setResults([]);
       console.log(JSON.stringify(results));
-    } else if (nextMatchNum === 6) {
-      //display results
     }
   };
 
-  const checkifFoughtPreviously = (checkingPlayer) => {
+  const checkifFoughtPreviously = (checkingPlayer, fnMatchNum) => {
     //get current match num
-    if (parseInt(matchNum) === 1) {
+    if (fnMatchNum === 1) {
       return false;
     }
     let matchKey = "";
-    for (let i = parseInt(matchNum) - 1; i >= 1; i--) {
-      matchKey = "match" + matchNum;
+    for (let i = fnMatchNum - 1; i >= 1; i--) {
+      matchKey = "match" + i;
       if (
         checkingPlayer === game[matchKey]["player1"] ||
         checkingPlayer === game[matchKey]["player2"]
@@ -321,6 +344,11 @@ function Battle(props) {
       </span>
     </Fragment>
   );
+
+  const showAllResults = () => {
+    history.push("/matchResults");
+  };
+
   return (
     <div className="wrapper">
       <div id="battletitle">BATTLE</div>
@@ -355,6 +383,14 @@ function Battle(props) {
         >
           NEXT MATCH
         </button>
+        <button
+          id="show_button"
+          disabled={showResultsDisabled}
+          variant="btn btn-success"
+          onClick={() => showAllResults()}
+        >
+          RESULTS
+        </button>
       </div>
       <Container>
         <Row id="progressbarRow" className="justify-content-center">
@@ -366,22 +402,6 @@ function Battle(props) {
             />
           </Col>
         </Row>{" "}
-        {/* <Row id="progressbarRow" className="justify-content-center">
-          <Col xs lg="6">
-            <div class="progress">
-              <div
-                class="progress-bar"
-                role="progressbar"
-                style={` width: ${player1Health}%`}
-                aria-valuenow={player1Health}
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                {`${player1Health}%`}
-              </div>
-            </div>
-          </Col>
-        </Row> */}
         <Row id="progressbarRow" className="justify-content-center">
           <Col xs lg="6">
             <ProgressBar
@@ -395,18 +415,6 @@ function Battle(props) {
       <Container fluid>
         <Row id="battleArea" className="justify-content-center">
           <Col xs lg="8">
-            {/* <Form>
-              <Form.Group controlId="battleArea">
-                <Form.Label>Battle results</Form.Label>
-                <Form.Control
-                  as="textarea"
-                  disabled
-                  value={results}
-                  placeholder="Start the BAAATTLE!!!!!"
-                  onChange={(r) => setResults(r)}
-                ></Form.Control>
-              </Form.Group>
-            </Form> */}
             <div className="battleareatext">
               {results.length >= 1 ? (
                 results.map((resultLine, index) => {

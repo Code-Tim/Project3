@@ -6,6 +6,9 @@
   font-family: playerTitleFont;
   src: url(/assets/fonts/Captain-Redemption.ttf);
 }
+@viewport{
+  viewport-fit: cover;
+}
 .matchSetup {
   background-image: url("/assets/images/shutterstock_248261209.jpg");
   text-align: center;
@@ -14,7 +17,14 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+.matchResults {
+  background-image: url("/assets/images/shutterstock_248261209.jpg");
+  text-align: center;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 body,
 html {
   height: 100%;
@@ -45,12 +55,20 @@ form {
 #title {
   color: red;
   font-size: 7rem;
-  padding-top: 100px;
+  padding-top: 80px;
+  font-family: "titleFont";
+  text-shadow: 2px 2px black;
+}
+#resultsTitle {
+  color: red;
+  font-size: 7rem;
+  padding-top: 80px;
   font-family: "titleFont";
   text-shadow: 2px 2px black;
 }
 
-#playerTitle {
+
+#playerTitle, #winnerTitle {
   color: black;
   font-size: 3rem;
   padding-top: 1rem;

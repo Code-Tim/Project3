@@ -120,67 +120,20 @@ export function MatchSetup() {
             {game["match5"]["player2"]}
           </Col>
         </Row>
+        <Row className="justify-content-center p-1">
+          <Col className="justify-content-center p-1" id="playerTitle"></Col>
+          <Col className="justify-content-center p-1">
+            <button
+              id="match"
+              variant="btn btn-success"
+              onClick={() => startBattle()}
+            >
+              START MATCH
+            </button>
+          </Col>
+          <Col className="justify-content-center p-1" id="playerTitle"></Col>
+        </Row>
       </Container>
-      {/* <form>
-        <button
-          id="match"
-          variant="btn btn-success"
-          onClick={() => setupMatch("1")}
-        >
-          MATCH 1
-        </button>
-      </form>
-
-      <form>
-        <button
-          id="match"
-          variant="btn btn-success"
-          onClick={() => setupMatch("2")}
-        >
-          MATCH 2
-        </button>
-      </form>
-
-      <form>
-        <button
-          id="match"
-          variant="btn btn-success"
-          onClick={() => setupMatch("3")}
-        >
-          MATCH 3
-        </button>
-      </form>
-
-      <form>
-        <button
-          id="match"
-          variant="btn btn-success"
-          onClick={() => setupMatch("4")}
-        >
-          MATCH 4
-        </button>
-      </form>
-
-      <form>
-        <button
-          id="match"
-          variant="btn btn-success"
-          onClick={() => setupMatch("5")}
-        >
-          MATCH 5
-        </button>
-      </form> */}
-
-      <form>
-        <button
-          id="match"
-          variant="btn btn-success"
-          onClick={() => startBattle()}
-        >
-          START MATCH
-        </button>
-      </form>
-      {/* Need to show the matches that are created */}
     </div>
   );
 }
