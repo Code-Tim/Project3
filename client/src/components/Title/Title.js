@@ -48,6 +48,7 @@ function Title() {
     <div className="wrapper">
       <div id="title">Finish Them Wrestling</div>
       <div id="title">FTW</div>
+      <img src="/client/public/assets/images/ftwLogo.png" alt="logo"></img>
 
       <form>
         <button
