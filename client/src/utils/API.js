@@ -20,4 +20,7 @@ export default {
       })
       .catch();
   },
+  createNewCharacter: function (newCharacter) {
+    return axios.post("/api/wrestlers", newCharacter)
+  }
 };
