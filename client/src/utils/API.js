@@ -22,4 +22,8 @@ export default {
       })
       .catch();
   },
+  createNewCharacter: function (newCharacter) {
+    console.log(newCharacter)
+    return axios.post("/api/wrestlers", newCharacter)
+  }
 };

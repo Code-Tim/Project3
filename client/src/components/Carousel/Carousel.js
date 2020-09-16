@@ -2,9 +2,9 @@ import React from "react";
 import "./carousel.css";
 import { Carousel } from "react-responsive-carousel";
 
-export default () => (
-  <Carousel > 
-    <div className= "CaroChar">
+export default (props) => (
+  <Carousel onChange={props.handleInputCarousel}  >
+    <div >
       <img alt="" src="https://www.wwe.com/f/styles/wwe_1_1_l/public/all/2020/01/Bobby_Lashley_Pro--e616d36efc1e4b1919a8d771bc2e11ad.png" />
       {/* <p className="legend">Legend 1</p> */}
     </div>

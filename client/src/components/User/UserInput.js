@@ -3,7 +3,7 @@ import "./UserInput.css";
 
 
 
-function UserInput() {
+function UserInput(props) {
   const [state, setState] = React.useState({
     CharName: "",
     NickName: "",
@@ -30,21 +30,13 @@ function UserInput() {
           <div className="heading">Character Name</div>
           <input
             type="text"
-            name="CharName"
-            value={state.CharName}
-            onChange={handleChange}
+            name="name"
+            value={props.userState.name}
+            onChange={props.handleInputChange}
           />
         </label>
-        <label>
-          <div className="heading">Nickname</div>
-          <input
-            type="text"
-            name="NickName"
-            value={state.NickName}
-            onChange={handleChange}
-          />
-        </label>
-        <br></br>
+        
+        <br/><br/>
         <br></br>
       
       
