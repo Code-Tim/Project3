@@ -13,12 +13,12 @@ const WrestlersSchema = new Schema({
   },
   description: {
     type: String,
-    required: "A Description of the Wrestler is needed",
+    
   },
   // `link` is required and of type String
   imgUrl: {
     type: String,
-    required: "Image is required",
+  
   },
   // `stamina` is required and of type number
   stamina: {
@@ -29,14 +29,14 @@ const WrestlersSchema = new Schema({
   // `health` is required and of type number
   health: {
     type: Number,
-    required: true,
+    
     min: [10, "A Wrestler needs at least enough health to breathe "],
     max: 100,
   },
   // `finishingMove` is required and of type String
   finishingMove: {
     type: String,
-    required: false,
+   
   },
 });
 

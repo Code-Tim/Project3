@@ -49,6 +49,7 @@ h2 {
 }
 .carousel {
   height: 100px;
+  width: 1500px;
 }
 
 .slide,
@@ -92,9 +93,6 @@ h2 {
     height: 500px;
   }
 
-  .thumbs-wrapper {
-    margin: 0px;
-  }
 
   .counters {
     background-color: black;

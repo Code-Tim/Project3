@@ -1,27 +1,21 @@
 import React from "react";
-
 const UserContext = React.createContext({
-
   name: {
     value: "",
-    onChange: () => {}
+    onChange: () => {},
   },
   image: "",
-
-  nickname: {
+  description: {
     value: "",
-    onChange: () => {}
+    onChange: () => {},
   },
-  count: {
+  health: {
     value: "",
-    onChange: () => {}
+    onChange: () => {},
   },
-  count2: {
+  stamina: {
     value: "",
-    onChange: () => {}
+    onChange: () => {},
   },
-  
-  
 });
-
 export default UserContext;
