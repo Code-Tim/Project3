@@ -45,7 +45,7 @@ function PlayerSelect() {
   const checkIfDoneAndLeave = () => {
     let matchKey = "match" + matchNum;
     let matchObj = game[matchKey];
-    console.log(JSON.stringify(matchObj));
+
     if (
       !matchObj["player1"] ||
       !matchObj["player2"] ||

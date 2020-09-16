@@ -3,9 +3,7 @@ import axios from "axios";
 export default {
   // Gets all saved characters
   getSavedFightCharacters: function () {
-    console.log("inside getSavedFightCharacters");
     const axiosreturnVal = axios.get("/api/wrestlers");
-    console.log(axiosreturnVal);
     return axiosreturnVal;
   },
   // Saves an wrestlers to the database
@@ -22,8 +20,4 @@ export default {
       })
       .catch();
   },
-  createNewCharacter: function (newCharacter) {
-    console.log(newCharacter)
-    return axios.post("/api/wrestlers", newCharacter)
-  }
 };

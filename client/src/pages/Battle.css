@@ -1,7 +1,19 @@
+/* ==============================================================================
+// Name :Battle.css
+// Author :Sunitha/Chris/Tim/Majid
+// Date : 09/06/2020
+// Purpose: This css file describes the css for battle page . It is imported in
+// Battle.js
+// ==============================================================================*/
 @font-face {
     font-family: titleFont;
     src: url(/assets/fonts/Metal-Vampire.ttf);
   }
+  
+@font-face {
+  font-family: playerTitleFont;
+  src: url(/assets/fonts/Captain-Redemption.ttf);
+}
 @viewport{
   viewport-fit: cover;
 }
@@ -13,14 +25,16 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
-  
   body,
   html {
     height: 100%;
   }
 
   #progressbarRow{
-    padding: 1rem;
+    padding: 0.5rem;
+  }
+  #progressbarRowName{
+    padding: 0.25rem;
   }
   .progress{
     height: 2rem;
@@ -29,7 +43,6 @@
     margin: 20px;
     background-color: rgb(172,188,211);
   }
-  
   #battletitle {
     color: red;
     font-size: 4rem;
@@ -43,6 +56,13 @@
     padding-top: 10px;
     font-family: "titleFont";
     text-shadow: 2px 2px black;
+  }
+  #smalltitle {
+    color: black;
+    font-size: 2rem;
+    padding-top: 0.5rem;
+    font-family: "playerTitleFont";
+    text-shadow: 1px 1px whitesmoke;
   }
   
   /* 
