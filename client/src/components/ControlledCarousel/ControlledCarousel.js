@@ -45,9 +45,6 @@ function ControlledCarousel(props) {
 
     let matchKey = "match" + matchNum;
     let matchObj = game[matchKey];
-    console.log(matchKey);
-    console.log(JSON.stringify(matchObj));
-    console.log(props.playerNum);
     let matchObjChanged = new Object({ ...matchObj });
 
     //get the player object

@@ -1,3 +1,11 @@
+// ==============================================================================
+// Name :Battle.js
+// Author :Sunitha/Chris/Tim/Majid
+// Date : 09/06/2020
+// Purpose: This javascript file describes the battle page ; it contains the
+// logic to make the fight moves and update the context
+// ==============================================================================
+
 import React, {
   useState,
   useEffect,
@@ -65,13 +73,11 @@ function Battle(props) {
 
   useEffect(() => {
     //get the match object from context and players from the db array
-    debugger;
     isMountedRef.current = true;
     let matchObjKey = "match" + matchNum;
     let newState = new Object({ ...game });
     let newMatchObj = new Object({ ...newState[matchObjKey] });
     setCurrentMatchObj({ ...newMatchObj });
-    console.log(JSON.stringify(currentMatchObj));
 
     // set health for the health bars
     if (newMatchObj && newMatchObj["health1"]) {
@@ -83,26 +89,16 @@ function Battle(props) {
     return () => (isMountedRef.current = false);
   }, []);
 
-  // //functions for fight logic
-  // const setHealthForMatch = () => {
-  //   debugger;
-
-  //   // set health for the health bars
-  //   setPlayer1Health(currentMatchObj["health1"].toString());
-  //   setPlayer2Health(currentMatchObj["health2"].toString());
-  // };
-
   const fight = (moveId) => {
-    debugger;
     //for first game useEffect will do the  steps below
     //get players for the match from the context
     //set stamina and health for the players
 
-    //start the fight
-    addRound();
-    opponentMove(moveId);
-    console.log(results);
-
+    if (player1Health > 0 && player2Health > 0) {
+      //start the fight
+      addRound();
+      opponentMove(moveId);
+    }
     //check if game over:
     gameOver();
   };
@@ -139,7 +135,7 @@ function Battle(props) {
       resultMessage =
         game["match" + matchNum]["player2"] +
         " counter failed! " +
-        game["match" + matchNum]["player1"] +
+        game["match" + matchNum]["player2"] +
         " is dealt 15 damage!";
       setResults([...results, resultMessage]);
       player2Health <= 15
@@ -220,14 +216,14 @@ function Battle(props) {
   const gameOver = () => {
     let resultMessage = "";
     if (player1Health === 0 || player2Health === 0) {
-      debugger;
       resultMessage = "GAME OVER!";
       setResults([...results, resultMessage]);
       resultMessage = "";
       setResults([...results, resultMessage]);
-      console.log(results);
+      resultMessage = "";
+      setResults([...results, resultMessage]);
       //set match results
-      debugger;
+
       let newCurrentMatchObject = new Object({ ...game["match" + matchNum] });
       if (player1Health === 0 && player2Health === 0) {
         newCurrentMatchObject["matchResult"] = "tie";
@@ -256,7 +252,6 @@ function Battle(props) {
   };
 
   const setupNextFight = () => {
-    debugger;
     setShowMatchOutcome(false);
     //get next match players and stats
     let nextMatchNum = parseInt(matchNum) + 1;
@@ -267,7 +262,6 @@ function Battle(props) {
 
       //Step 2 : get the new player stats
       setCurrentMatchObj({ ...game[matchObjKey] });
-      console.log(JSON.stringify(currentMatchObj));
 
       //PLAYER1
       //Step 3:check if previous games fought
@@ -277,7 +271,6 @@ function Battle(props) {
         nextMatchNum
       );
       //Step 4: set health for the health bars
-      debugger;
       //if the player has played before then decrement health by
       // 25% of the stamina
       if (foughtPreviously) {
@@ -314,7 +307,6 @@ function Battle(props) {
       setFightDisabled(false);
       setNextFightDisabled(true);
       setResults([]);
-      console.log(JSON.stringify(results));
     }
   };
 
@@ -345,6 +337,17 @@ function Battle(props) {
     </Fragment>
   );
 
+  const Roster = () => (
+    <Fragment>
+      <span>
+        {" -- "}
+        {currentMatchObj["player1"]}
+        {" vs "}
+        {currentMatchObj["player2"]}
+      </span>
+    </Fragment>
+  );
+
   const showAllResults = () => {
     history.push("/matchResults");
   };
@@ -353,10 +356,7 @@ function Battle(props) {
     <div className="wrapper">
       <div id="battletitle">BATTLE</div>
       <div id="battletitle2">
-        MATCH{matchNum} {showMatchOutcome ? <Results /> : null}{" "}
-      </div>
-      <div id="battletitle2">
-        {currentMatchObj["player1"]} vs {currentMatchObj["player2"]}
+        MATCH{matchNum} {showMatchOutcome ? <Results /> : <Roster />}{" "}
       </div>
       <div className="row justify-content-center">
         <button
@@ -393,6 +393,11 @@ function Battle(props) {
         </button>
       </div>
       <Container>
+        <Row id="progressbarRowName" className="justify-content-center">
+          <Col xs lg="3">
+            <p id="smalltitle">{currentMatchObj["player1"]}</p>
+          </Col>
+        </Row>
         <Row id="progressbarRow" className="justify-content-center">
           <Col xs lg="6">
             <ProgressBar
@@ -402,6 +407,11 @@ function Battle(props) {
             />
           </Col>
         </Row>{" "}
+        <Row id="progressbarRowName" className="justify-content-center">
+          <Col xs lg="3">
+            <p id="smalltitle">{currentMatchObj["player2"]}</p>
+          </Col>
+        </Row>
         <Row id="progressbarRow" className="justify-content-center">
           <Col xs lg="6">
             <ProgressBar
