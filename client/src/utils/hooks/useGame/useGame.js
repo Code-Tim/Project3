@@ -54,15 +54,6 @@ const useGame = () => {
     setGame(newState);
   };
 
-  const [match1, setMatch1] = useState({
-    matchName: "",
-    description: "",
-    player1: "",
-    player2: "",
-    won: false,
-    setupComplete: false,
-  });
-
   useEffect(() => {
     window.localStorage.setItem("game", JSON.stringify(game));
   }, [game]);

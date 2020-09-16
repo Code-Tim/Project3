@@ -64,7 +64,7 @@ function PlayerSelect() {
   //raison d'etre
   return (
     <div className="wrapper">
-      <div id="title">SELECT PLAYER</div>
+      <div id="title">SELECT PLAYERS</div>
       <Container fluid>
         <Row className="justify-content-center">
           <button
@@ -81,11 +81,11 @@ function PlayerSelect() {
 
         <Row className="justify-content-center">
           <Col>
-            <h1>Player 1</h1>
+            <h1>You</h1>
             <ControlledCarousel playerNum="1" />
           </Col>
           <Col>
-            <h1>Player 2</h1>
+            <h1>Opponent</h1>
             <ControlledCarousel playerNum="2" />
           </Col>
         </Row>
