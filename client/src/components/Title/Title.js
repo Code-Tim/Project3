@@ -48,6 +48,7 @@ function Title() {
     <div className="wrapper">
       <div id="title">Finish Them Wrestling</div>
       <div id="title">FTW</div>
+      <img src="./public/assets/images/npmInstall.png" alt="npm install"></img>
 
       <form>
         <button
