@@ -8,7 +8,7 @@ import Col from "react-bootstrap/Col";
 
 //this function is to redirect the user to select players for each match
 //the match number that we need to setup is set in the context
-//this could also be done using props
+//this could also be done using prop/s
 export function MatchResults() {
   //context and hooks
   const gameContext = useContext(GameContext);
@@ -50,15 +50,13 @@ export function MatchResults() {
   return (
     <div className="matchResults">
       <div id="title">RESULTS</div>
+
+      <img className="beltIcon" src="/assets/images/ftwLogo.png" alt="Logo" />
       <Container>
         <Row className="justify-content-center p-1">
           <Col className="justify-content-center p-1" id="winnerTitle">
             The Winning Team {overallWinner}
-            <img
-              className="beltIcon"
-              src="/assets/logo/ftwLogo.png"
-              alt="Logo"
-            />
+            {"      "}
           </Col>
         </Row>
         <Row className="justify-content-center p-1">
@@ -67,7 +65,9 @@ export function MatchResults() {
               MATCH 1
             </button>
           </Col>
-          <Col>{game["match1"]["player1"]}</Col>{" "}
+          <Col className="justify-content-center p-1" id="playerTitle">
+            {game["match1"]["player1"]}
+          </Col>{" "}
           <Col className="justify-content-center p-1" id="playerTitle">
             {game["match1"]["player2"]}
           </Col>

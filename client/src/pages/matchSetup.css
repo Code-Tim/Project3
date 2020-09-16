@@ -55,13 +55,20 @@ form {
 #title {
   color: red;
   font-size: 7rem;
-  padding-top: 100px;
+  padding-top: 80px;
+  font-family: "titleFont";
+  text-shadow: 2px 2px black;
+}
+#resultsTitle {
+  color: red;
+  font-size: 7rem;
+  padding-top: 80px;
   font-family: "titleFont";
   text-shadow: 2px 2px black;
 }
 
 
-#playerTitle #winnerTitle {
+#playerTitle, #winnerTitle {
   color: black;
   font-size: 3rem;
   padding-top: 1rem;
